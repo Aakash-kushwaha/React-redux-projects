@@ -1,8 +1,11 @@
-import { ADD_COUNT, DEVIDE, DOUBLE, REMOVE_COUNT } from "./action";
+import { ADD_COUNT,  DEVIDE, DOUBLE, REMOVE_COUNT } from "./action";
 
+const initstate={
 
+    count:0,
+}
 
-export const reducer = (store,{type,payload})=>{
+export const Counterreducer = (store=initstate,{type,payload})=>{
     console.log(store)
     switch(type){
         case ADD_COUNT:{
@@ -21,6 +24,7 @@ export const reducer = (store,{type,payload})=>{
                 ...store,count:store.count/payload
             }
         }
+    
         default:
             return store;
     }

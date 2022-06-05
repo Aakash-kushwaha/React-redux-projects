@@ -4,10 +4,11 @@ import { useDispatch , useSelector } from 'react-redux'
 import { addCount, double, removeCount, devide } from './components/action'
 
 const Counter = () => {
+    // doubt in store.count how it is getting us vlaue of count before provider it was not giveing but now even if i dont use line number 9 it is still working
     const dispatch = useDispatch()
-     const count = useSelector((store)=>store.count)
-    console.log(store.getState().count)
-
+     const count = useSelector((store)=>store.counter.count)
+    // console.log(store,"count")
+     console.log("rendered")
   return (<>
     <h1>counter {count}</h1>
     <button onClick={()=>dispatch(addCount(1))}>Add</button>
